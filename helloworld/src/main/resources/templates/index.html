@@ -1,0 +1,44 @@
+<!-----------------------------------------
+ * メイン画面 HTML
+ ----------------------------------------->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+</head>
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- サイドバー -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div id="sidebar-header">テストシステム</div>
+      <div class="list-group list-group-flush">
+        <details>
+          <summary open>テスト</summary>
+          <a href="#" class="list-group-item list-group-item-action bg-light">メニュー1</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light">メニュー2</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light">メニュー3</a>
+        </details>
+        <details>
+          <summary>その他</summary>
+          <a href="#" class="list-group-item list-group-item-action bg-light">メニュー1</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light">メニュー2</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light">メニュー3</a>
+        </details>
+      </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary mx-2" id="menu-toggle">Menu</button>
+      </nav>
+      <div layout:fragment="content" id="main-content">
+        <h2 class="mt-4">メインコンテンツ</h2>
+        <p>メニューより使用したい機能をクリックしてください。</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
