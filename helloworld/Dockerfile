@@ -1,5 +1,5 @@
 # ベースイメージとしてMavenを使用し、ビルド用のコンテナを設定
-FROM maven:3.8.6-eclipse-temurin-21 as build
+FROM maven:3.9-eclipse-temurin-21 as build
 
 # 作業ディレクトリを作成
 WORKDIR /app
@@ -12,7 +12,7 @@ COPY src /app/src
 RUN mvn clean package -DskipTests
 
 # 実行用の軽量JDKイメージを設定
-FROM eclipse-temurin:21-jdk-alpine
+FROM eclipse-temurin:21-jre-alpine
 
 # 作業ディレクトリを設定
 WORKDIR /app
