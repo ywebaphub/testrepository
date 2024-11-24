@@ -5,8 +5,8 @@ FROM maven:3.9-eclipse-temurin-21 as build
 WORKDIR /app
 
 # プロジェクトの依存関係とソースコードをコンテナにコピー
-COPY pom.xml /app/
-COPY src /app/src
+COPY helloworld/pom.xml /app/
+COPY helloworld/src /app/src
 
 # プロジェクトをビルド
 RUN mvn clean package -DskipTests
